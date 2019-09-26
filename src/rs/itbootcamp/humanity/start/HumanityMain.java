@@ -1,16 +1,21 @@
 package rs.itbootcamp.humanity.start;
 
+import java.io.IOException;
+
+import rs.itbootcamp.humanity.page.tests.HumanityAddEmpExcelTest;
 import rs.itbootcamp.humanity.page.tests.HumanityAddNewEmployeeTests;
-import rs.itbootcamp.humanity.page.tests.HumanityLoginTests;
+import rs.itbootcamp.humanity.page.tests.HumanityLogInTests;
+import rs.itbootcamp.humanity.page.tests.HumanityLogInExcelTest;
 
 public class HumanityMain {
 
-	public static void main(String[] args) throws InterruptedException {
+	public static void main(String[] args) throws InterruptedException, IOException {
 		
-		HumanityLoginTests.LogInTest();
+		//HumanityLogInTests.LogInTest();
+		HumanityLogInExcelTest.Log();
 		
-		HumanityAddNewEmployeeTests.AddEmployeeTest();
-
+		//HumanityAddNewEmployeeTests.AddEmployeeTest();
+		//HumanityAddEmpExcelTest.Addemp();
 	}
 
 }

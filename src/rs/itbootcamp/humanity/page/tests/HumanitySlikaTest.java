@@ -5,12 +5,13 @@ import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import rs.itbootcamp.humanity.page.objects.HumanityEditStaff;
 import rs.itbootcamp.humanity.page.objects.HumanityHome;
 import rs.itbootcamp.humanity.page.objects.HumanityMenu;
 import rs.itbootcamp.humanity.page.objects.HumanitySlika;
 
 public class HumanitySlikaTest {
-	public static boolean HumanitySlikaTest() throws InterruptedException {
+	public static boolean SlikaTest() throws Exception {
 		System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
 		
 		WebDriver driver = new ChromeDriver();
@@ -19,19 +20,18 @@ public class HumanitySlikaTest {
 		driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
 		driver.manage().window().maximize();
 		
-		HumanityHome.clickLogInBtn(driver);
-		HumanityHome.clickEmailUser(driver);
-		HumanityHome.enterEmailUser(driver, "hikaneh@temp-link.net");
-		HumanityHome.clickPassField(driver);
-		HumanityHome.enterPassField(driver, "trepavica");
-		HumanityHome.clicklogInbtn(driver);
+		HumanityLogInExcelTest.logInAction(driver);
 		
 		HumanityMenu.clickStaff(driver);
 		
 		HumanitySlika.clickEmpName(driver);
 		HumanitySlika.clickDetailsBtn(driver);
-		HumanitySlika.clickUploadBtn(driver);
+		HumanityEditStaff.SetImage(driver);
+		
+		Thread.sleep(4000);
+		driver.quit();
 		
 		return true;
+		
 	}
 }
