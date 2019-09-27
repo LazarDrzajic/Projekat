@@ -5,7 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 public class HumanityProfile {
-	private static final String DROPDOWNMENU_XPATH = "//div[@id='userm']";
+	private static final String DROPDOWNMENU_XPATH = "//i[@class='icon icon-arrowFullDn j-arrowIconToAvatar navBottom__userArrow']";
 	private static final String PROFILEBTN_XPATH = "//a[contains(text(),'Profile')]";
 	private static final String SETTINGSBTN_XPATH = "//div[@class='userm userm-mainPage']//a[contains(text(),'Settings')]";
 	private static final String AVAILABILITYBTN_XPATH = "//div[@class='userm userm-mainPage']//a[contains(text(),'Availability')]";
@@ -58,7 +58,10 @@ public class HumanityProfile {
 	}
 
 	// Version
-	public static WebElement getVersion(WebDriver driver) {
-		return driver.findElement(By.xpath(VERSION_XPATH));
+	public static WebElement getVersionElement(WebDriver driver) {
+		return driver.findElement(By.xpath(VERSION_XPATH)).findElement(By.tagName("b"));
+	}
+	public static String getVersion(WebDriver driver) {
+		return getVersionElement(driver).getAttribute("innerHTML");
 	}
 }

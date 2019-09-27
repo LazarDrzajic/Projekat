@@ -7,10 +7,9 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import rs.itbootcamp.humanity.page.objects.HumanityHome;
 import rs.itbootcamp.humanity.page.objects.HumanityMenu;
-import rs.itbootcamp.humanity.page.objects.HumanitySettings;
 
-public class HumanitySettingsTest {
-	public static boolean SettingsTest() throws Exception {
+public class HumanityMenuTest {
+	public static boolean MenuTest() throws Exception {
 		System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
 		
 		WebDriver driver = new ChromeDriver();
@@ -20,18 +19,25 @@ public class HumanitySettingsTest {
 		driver.manage().window().maximize();
 		
 		HumanityLogInExcelTest.logInAction(driver);
+		HumanityMenu.clickDashboard(driver);
+		Thread.sleep(3000);
+		HumanityMenu.clickShiftplan(driver);
+		Thread.sleep(3000);
+		HumanityMenu.clickTimeClock(driver);
+		Thread.sleep(3000);
+		HumanityMenu.clickLeave(driver);
+		Thread.sleep(3000);
+		HumanityMenu.clickTraining(driver);
+		Thread.sleep(3000);
+		HumanityMenu.clickStaff(driver);
+		Thread.sleep(3000);
+		HumanityMenu.clickPayroll(driver);
+		Thread.sleep(3000);
+		HumanityMenu.clickReports(driver);
+		Thread.sleep(3000);
 		HumanityMenu.clickSettings(driver);
-		HumanitySettings.getCountry(driver);
-		HumanitySettings.selectCountry(driver, "Malta");
-		HumanitySettings.getDefaultLanguage(driver);
-		HumanitySettings.selectDefaultLanguage(driver, "American English");
-		HumanitySettings.getTimeZone(driver);
-		HumanitySettings.selectTimeZone(driver, "24 hour");
-		HumanitySettings.clickSaveSettings(driver);
-		
-		Thread.sleep(5000);
+		Thread.sleep(4000);
 		driver.quit();
-		
 		return true;
-	}
+}
 }

@@ -31,11 +31,11 @@ public class HumanityAddNewEmployeeTests {
 		
 		HumanityStaff.clickAddEmp(driver);
 		HumanityStaff.clickFirstName(driver);
-		HumanityStaff.enterFirstName(driver, "Stevica");
+		HumanityStaff.enterFirstName(driver, "Dunja");
 		HumanityStaff.clickLastName(driver);
-		HumanityStaff.enterLastName(driver, "Kurcubic");
+		HumanityStaff.enterLastName(driver, "Kolasinac");
 		HumanityStaff.clickEmail(driver);
-		HumanityStaff.enterEmail(driver, "stevdza@raditel.com");
+		HumanityStaff.enterEmail(driver, "thedunjakol@protokol.com");
 		HumanityStaff.clickSaveEmp(driver);
 		HumanityStaff.clickCheckEmp(driver);
 		

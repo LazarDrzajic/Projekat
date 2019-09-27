@@ -9,6 +9,7 @@ public class HumanitySettings {
 	private static final String COUNTRYDROPDOWN_XPATH = "//select[@id='country']";
 	private static final String DEFAULTLANGUAGE_XPATH = "//select[@name='language']";
 	private static final String TIMEZONE_XPATH = "//select[@name='pref_24hr']";
+	private static final String SAVEBTN_XPATH = "//button[@id='_save_settings_button']";
 
 	// Select country
 	public static Select getCountry(WebDriver driver) {
@@ -33,4 +34,12 @@ public class HumanitySettings {
     public static void selectTimeZone(WebDriver driver, String data) {
     	getTimeZone(driver).selectByVisibleText(data);
     }
+ // Save settings
+ 	public static WebElement getSaveSettings(WebDriver driver) {
+ 		return driver.findElement(By.xpath(SAVEBTN_XPATH));
+ 	}
+
+ 	public static void clickSaveSettings(WebDriver driver) {
+ 		 getSaveSettings(driver).click();
+ 	}
 }
